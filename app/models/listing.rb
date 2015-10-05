@@ -3,6 +3,6 @@ class Listing < ActiveRecord::Base
 	  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 	   :storage => :s3,
                 :bucket => 'etsydemo11',
-                :s3_credentials => S3_CREDENTIALS (we set this in an initializer)
+        credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY']),
 
 end
