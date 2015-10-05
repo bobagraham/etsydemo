@@ -50,6 +50,3 @@ Rails.application.configure do
 }
 
 
-Aws.config[:region]
-s3 = Aws::S3::Client.new(region:'us-west-2')
-end
