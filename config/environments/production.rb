@@ -78,14 +78,11 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 # Sets paperclip to upload images to amazons3
-    config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-    :bucket => ENV['AWS_BUCKET'],
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['AWS_BUCKET'], # Matches global declaration in `application.yml`
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
-
-s3 = Aws::S3::Client.new(region:'us-west-2')
-
