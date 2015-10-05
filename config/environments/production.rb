@@ -87,15 +87,5 @@ Rails.application.configure do
   }
 }
 
-Aws.config.update(
-  region: 'us-east-1',
-  credentials: Aws::Credentials.new(
-    Figaro.env.s3_access_key_id,
-    Figaro.env.s3_secret_access_key
-  )
-)
-s3 = Aws::S3::Client.new
-resp = s3.list_buckets
-puts resp.buckets.map(&:name)
 
 end
