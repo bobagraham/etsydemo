@@ -49,4 +49,4 @@ Rails.application.configure do
   }
 }
 
-
+s3 = Aws::S3::Client.new(region:'us-west-2')
