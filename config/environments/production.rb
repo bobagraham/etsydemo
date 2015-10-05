@@ -87,5 +87,8 @@ Rails.application.configure do
   }
 }
 
+Aws.config[:region]
+ENV['AWS_REGION']
+
 
 end
